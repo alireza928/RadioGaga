@@ -17,7 +17,8 @@
         <div id="welcome-section">
             <h1>Welcome to Radio Gaga radio</h1>
             <p>Enjoy the best music selection 24/7!</p>
-            <audio src="">
+            <audio controls>
+                <source src="media/sample.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>

@@ -16,7 +16,14 @@
         </div>
         <div id="welcome-section">
             <h1>Welcome to Radio Gaga playlist</h1>
-            <p>This is a sample webpage created using PHP and HTML.</p>
+            <p>Here is our curated playlist of top hits:</p>
+            <ol>
+                <li>Song 1 - Artist A</li>
+                <li>Song 2 - Artist B</li>
+                <li>Song 3 - Artist C</li>
+                <li>Song 4 - Artist D</li>
+                <li>Song 5 - Artist E</li>
+            </ol>
         </div>
     </body>
 </html>
