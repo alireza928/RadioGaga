@@ -21,7 +21,7 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
 </head>
 <body>
 <header>
-    <a href="index.php"><img src="images/logo.png" alt="Logo" class="logo"></a>
+    <a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
