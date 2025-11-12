@@ -1,29 +1,64 @@
+<?php
+$conn = mysqli_connect("localhost", "root", "", "radiogaga");
+if (!$conn) { die("Connection failed: " . mysqli_connect_error()); }
+
+$album_id = isset($_GET['album']) ? $_GET['album'] : 1;
+
+$album_sql = "SELECT * FROM albums WHERE id = $album_id";
+$album_result = mysqli_query($conn, $album_sql);
+$album = mysqli_fetch_assoc($album_result);
+
+$tracks_sql = "SELECT * FROM tracks WHERE album_id = $album_id";
+$tracks_result = mysqli_query($conn, $tracks_sql);
+?>
+
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Radio Gaga - Playlist</title>
-        <link rel="stylesheet" href="CSS\styles.css">
-    </head>
-    <body>
-        <div id = "navbar">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="radio.php">Radio</a></li>
-                <li><a href="playlist.php">Playlist</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist - <?php echo $album['name']; ?></title>
+    <link rel="stylesheet" href="CSS\styles.css">
+</head>
+<body>
+<header>
+    <a href="index.php"><img src="images/logo.png" alt="Logo" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="playlist.php">Playlist</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="playlist">
+    <section class="album-card">
+        <h1><?php echo $album['name']; ?></h1>
+        <img src="<?php echo $album['image']; ?>" alt="<?php echo $album['name']; ?>" class="album-cover">
+        <h2>Tracks</h2>
+        <div class="tracks">
+            <?php while($track = mysqli_fetch_assoc($tracks_result)) { ?>
+            <div class="track">
+                <p class="track-name"><?php echo $track['name']; ?> (<?php echo $track['duration']; ?>)</p>
+                <audio controls>
+                    <source src="<?php echo $track['audio_file']; ?>" type="audio/mpeg">
+                </audio>
+            </div>
+            <?php } ?>
         </div>
-        <div id="welcome-section">
-            <h1>Welcome to Radio Gaga playlist</h1>
-            <p>Here is our curated playlist of top hits:</p>
-            <ol>
-                <li>Song 1 - Artist A</li>
-                <li>Song 2 - Artist B</li>
-                <li>Song 3 - Artist C</li>
-                <li>Song 4 - Artist D</li>
-                <li>Song 5 - Artist E</li>
-            </ol>
+
+        <h2>Album Video</h2>
+        <video width="600" controls>
+            <source src="<?php echo $album['video']; ?>" type="video/mp4">
+        </video>
+
+        <h3>Switch Album</h3>
+        <div class="album-switch">
+            <a href="playlist.php?album=1" class="btn">Album 1</a>
+            <a href="playlist.php?album=2" class="btn">Album 2</a>
+            <a href="playlist.php?album=3" class="btn">Album 3</a>
         </div>
-    </body>
+    </section>
+</main>
+
+</body>
 </html>
