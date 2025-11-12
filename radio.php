@@ -15,8 +15,11 @@
             </ul>
         </div>
         <div id="welcome-section">
-            <h1>Welcome to Radio Gaga</h1>
-            <p>This is a sample webpage created using PHP and HTML.</p>
+            <h1>Welcome to Radio Gaga radio</h1>
+            <p>Enjoy the best music selection 24/7!</p>
+            <audio src="">
+                Your browser does not support the audio element.
+            </audio>
         </div>
     </body>
 </html>

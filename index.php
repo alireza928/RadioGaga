@@ -23,7 +23,8 @@
         </div>
         <div id="welcome-section">
             <h1>Welcome to Radio Gaga</h1>
-            <p>This is a sample webpage created using PHP and HTML.</p>
+            <p>The Best Radio In The World!!</p>
+            <input type="button" value="Listen Now" onclick="window.location.href='radio.php'"/>
         </div>
     </body>
 </html>

@@ -15,7 +15,7 @@
             </ul>
         </div>
         <div id="welcome-section">
-            <h1>Welcome to Radio Gaga</h1>
+            <h1>Welcome to Radio Gaga playlist</h1>
             <p>This is a sample webpage created using PHP and HTML.</p>
         </div>
     </body>
