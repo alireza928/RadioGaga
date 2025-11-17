@@ -38,7 +38,7 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
         <div class="tracks">
             <?php while($track = mysqli_fetch_assoc($tracks_result)) { ?>
             <div class="track">
-                <p class="track-name"><?php echo $track['name']; ?> (<?php echo $track['duration']; ?>)</p>
+                <p class="track-name"><?php echo $track['name']; ?> (<video?php echo $track['duration']; ?>)</p>
                 <audio controls>
                     <source src="<?php echo $track['audio_file']; ?>" type="audio/mpeg">
                 </audio>
@@ -46,8 +46,8 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
             <?php } ?>
         </div>
 
-        <h2>Album Video</h2>
-        <video width="600" controls>
+        <h2>Song Video</h2>
+        <video width="600"  controls loop muted>
             <source src="<?php echo $album['video']; ?>" type="video/mp4">
         </video>
 
