@@ -46,8 +46,8 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
             <?php } ?>
         </div>
 
-        <h2>Song Video</h2>
-        <video width="600"  controls loop muted>
+        <h2>Song Video:</h2>
+        <video width="600"  controls loop muted autoplay>
             <source src="<?php echo $album['video']; ?>" type="video/mp4">
         </video>
 
