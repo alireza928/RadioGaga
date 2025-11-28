@@ -12,6 +12,7 @@
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="playlist.php">Playlist</a></li>
+            <li><a href="fix/index.php">fix</a></li>
         </ul>
     </nav>
 </header>
