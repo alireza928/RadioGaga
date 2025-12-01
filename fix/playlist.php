@@ -65,18 +65,16 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
                     </audio>
                 </td>
             </tr>
-            <tr>
-                <td class="track-name"><?php echo htmlspecialchars($track['name']); ?></td>
-                <td class="track-duration"><?php echo htmlspecialchars($track['duration']); ?></td>
-                <td>
-                    <audio controls>
-                        <source src="<?php echo htmlspecialchars($track['audio_file']); ?>" type="audio/mpeg">
-                    </audio>
-                </td>
-            </tr>
             <?php } ?>
         </tbody>
     </table>
+
+        <h2>Song Bio:</h2>
+        <p>
+            <?php 
+            echo $track ['bio'];
+            ?>
+        </p>
         <h2>Song Video:</h2>
         <video src="<?php echo $track ['video'] ?>"></video>
         

@@ -1,0 +1,178 @@
+/* ----- GENERAL SETTINGS ----- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #ffcc00;
+}
+
+a:hover {
+    color: #ffaa00;
+}
+
+/* ----- HEADER ----- */
+.header {
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    border-bottom: 3px solid #ffcc00;
+}
+
+.logo {
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ----- CONTENT SECTION ----- */
+.content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #ddd;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background: #ffaa00;
+}
+
+/* ----- ALBUM GRID ----- */
+.albums-grid {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.albums-grid a {
+    text-align: center;
+    color: white;
+}
+
+.albums-grid img {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    border: 3px solid #ffcc00;
+    transition: 0.3s;
+}
+
+.albums-grid img:hover {
+    transform: scale(1.05);
+    border-color: #ffaa00;
+}
+
+/* ----- PLAYLIST PAGE ----- */
+.album-cover {
+    width: 250px;
+    border-radius: 12px;
+    border: 3px solid #ffcc00;
+    margin: 20px auto;
+}
+
+/* Track Table */
+.track {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+table th {
+    background: #222;
+    padding: 12px;
+    font-size: 18px;
+    border-bottom: 2px solid #ffcc00;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+}
+
+.track-name {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+audio {
+    width: 180px;
+}
+
+/* Video */
+video {
+    width: 80%;
+    margin-top: 15px;
+    border: 3px solid #ffcc00;
+    border-radius: 12px;
+}
+
+/* Mobile Friendly */
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .albums-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table td, table th {
+        font-size: 15px;
+    }
+
+    audio {
+        width: 140px;
+    }
+}
