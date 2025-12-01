@@ -46,14 +46,40 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
         <h2>Tracks</h2>
     </div>
     <div class="track">
-        <?php while($track = mysqli_fetch_assoc($tracks_result)) { ?>
-        <p class="track-name"><?php echo $track['name']; ?> (<?php echo $track['duration']; ?>)</p>
-        <p class="track-bio"><?php echo $track['bio']; ?></p>
-        <audio controls>
-            <source src="<?php echo $track['audio_file']; ?>" type="audio/mpeg">
-        </audio>
+    <table>
+        <thead>
+            <tr>
+                <th>Track Name</th>
+                <th>Duration</th>
+                <th>Audio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while($track = mysqli_fetch_assoc($tracks_result)) { ?>
+            <tr>
+                <td class="track-name"><?php echo htmlspecialchars($track['name']); ?></td>
+                <td class="track-duration"><?php echo htmlspecialchars($track['duration']); ?></td>
+                <td>
+                    <audio controls>
+                        <source src="<?php echo htmlspecialchars($track['audio_file']); ?>" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td class="track-name"><?php echo htmlspecialchars($track['name']); ?></td>
+                <td class="track-duration"><?php echo htmlspecialchars($track['duration']); ?></td>
+                <td>
+                    <audio controls>
+                        <source src="<?php echo htmlspecialchars($track['audio_file']); ?>" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+        <h2>Song Video:</h2>
         <video src="<?php echo $track ['video'] ?>"></video>
-        <?php } ?>
+        
     </div>    
 </body>
 </html>
