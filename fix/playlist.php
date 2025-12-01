@@ -1,9 +1,13 @@
 <?php
+// get the functions
+require '../inc/functions.php';
+
 // Database connection
 $conn = mysqli_connect("localhost", "root", "", "radio");
 if (!$conn) { 
     die("Connection failed: " . mysqli_connect_error()); 
 }
+
 
 // Get album ID from URL
 $album_id = isset($_GET['album']) ? intval($_GET['album']) : 1;
@@ -16,6 +20,10 @@ $album = mysqli_fetch_assoc($album_result);
 // Fetch tracks from this album
 $tracks_sql = "SELECT * FROM tracks WHERE album_id = $album_id";
 $tracks_result = mysqli_query($conn, $tracks_sql);
+
+$tracks = mysqli_fetch_all($tracks_result, MYSQLI_ASSOC);
+
+// myDump("tracks", $tracks);
 
 ?>
 
@@ -55,9 +63,9 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
             </tr>
         </thead>
         <tbody>
-            <?php while($track = mysqli_fetch_assoc($tracks_result)) { ?>
+            <?php foreach($tracks as $track) { ?>
             <tr>
-                <td class="track-name"><?php echo htmlspecialchars($track['name']); ?></td>
+                <td class="track-name"><?php echo htmlspecialchars($track['name']); ?></br /><?php // myDump("\$track", $track); ?></td>
                 <td class="track-duration"><?php echo htmlspecialchars($track['duration']); ?></td>
                 <td>
                     <audio controls>
@@ -65,19 +73,31 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
                     </audio>
                 </td>
             </tr>
+            <tr>
+                <td colspan="3">
+                    <h2>Video:</h2>
+                    <iframe src="<?php echo $track ['video']; ?>" title="Dr. Dre - I Need A Doctor (Explicit) ft. Eminem, Skylar Grey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </td>
+            <tr>
+                <td colspan="3">
+                    <h2>Song Bio:</h2>
+                    <?php echo nl2br($track ['bio']); ?>
+                </td>
+            </tr>
             <?php } ?>
         </tbody>
     </table>
 
-        <h2>Song Bio:</h2>
         <p>
             <?php 
-            echo $track ['bio'];
+
+            // myDump($track, 1);
+            
+
+            // myDump("\$album",  $album);
             ?>
         </p>
-        <h2>Song Video:</h2>
-        <video src="<?php echo $track ['video'] ?>"></video>
-        
     </div>    
 </body>
 </html>
+                
