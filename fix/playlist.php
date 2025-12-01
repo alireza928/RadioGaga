@@ -48,9 +48,14 @@ $tracks = mysqli_fetch_all($tracks_result, MYSQLI_ASSOC);
     </nav>
     </div>
 
+    <div class="albums-grid">
+            <a href="playlist.php?album=1"><img src="IMG/album_1.png" alt="Album 1"><p>Album 1 - Hiphop</p></a>
+            <a href="playlist.php?album=2"><img src="IMG/Rock.png" alt="Album 1"><p>Album 2 - Top 5 Rock Classics: 80s, 90s & 2000s</p></a>
+    </div>
+
     <div class="content">
         <h1><?php echo $album['name']; ?></h1>
-        <img src="<?php echo $album['image']; ?>" alt="<?php echo $album['name']; ?>" class="album-cover">
+        
         <h2>Tracks</h2>
     </div>
     <div class="track">
