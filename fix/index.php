@@ -30,7 +30,8 @@
         
         <div class="albums-grid">
             <a href="playlist.php?album=1"><img src="IMG/album_1.png" alt="Album 1"><p>Album 1 - Hiphop</p></a>
-            <a href="playlist.php?album=2"><img src="IMG/Rock.png" alt="Album 1"><p>Album 2 - Top 5 Rock Classics: 80s, 90s & 2000s</p></a>
+            <a href="playlist.php?album=2"><img src="IMG/Rock.png" alt="Album 2"><p>Album 2 - Top 5 Rock Classics: 80s, 90s & 2000s</p></a>
+            <a href="playlist.php?album=3"><img src="IMG/LAFU.png" alt="Album 3"><p>Album 3 - Top 5 DJ Lafuente Songs</p></a>
         </div>
 
     </div>
