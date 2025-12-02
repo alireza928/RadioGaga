@@ -23,23 +23,15 @@ $tracks_result = mysqli_query($conn, $tracks_sql);
 
 $tracks = mysqli_fetch_all($tracks_result, MYSQLI_ASSOC);
 
+// Debugging: dump the tracks array
 // myDump("tracks", $tracks);
 
 // head the HTML
 HTMLhead("Playlist - " . $album['name']);
 
-
-
+// Output the navigation bar
+HTMLNav();
 ?>
-    <div class="header">
-    <a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="playlist.php">Albums</a></li>
-        </ul>
-    </nav>
-    </div>
 
     <div class="albums-grid">
         <a href="playlist.php?album=1"><img src="IMG/album_1.png" alt="Album 1"><p>Album 1 - Hiphop</p></a>
@@ -86,17 +78,10 @@ HTMLhead("Playlist - " . $album['name']);
             <?php } ?>
         </tbody>
     </table>
-
-        <p>
-            <?php 
-
-            // myDump($track, 1);
-            
-
-            // myDump("\$album",  $album);
-            ?>
-        </p>
     </div>    
-</body>
-</html>
+
+<?php
+// the HTML footer
+HTMLfoot();
+?>
                 

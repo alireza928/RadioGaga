@@ -74,6 +74,31 @@ function HTMLhead($title = "RadioGaga")
 <?php
 }
 
+// Outputs the navigation bar
+function HTMLNav()
+{
+?>
+        <div class="header">
 
+        <a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="playlist.php">Albums</a></li>
+            </ul>
+        </nav>
+
+    </div>
+<?php
+}
+
+// Outputs the HTML footer
+function HTMLfoot()
+{
+?>
+    </body>
+    </html>
+<?php
+}
 
 ?>

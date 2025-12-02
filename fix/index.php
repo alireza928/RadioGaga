@@ -4,19 +4,10 @@ require_once 'inc/functions.php';
 
 // Output the HTML header for the home page
 HTMLhead("RadioGaga Home");
+
+// Output the navigation bar
+HTMLNav();
 ?>
-
-    <div class="header">
-
-        <a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="playlist.php">Albums</a></li>
-            </ul>
-        </nav>
-
-    </div>
 
     <div class="content">
 
@@ -34,5 +25,7 @@ HTMLhead("RadioGaga Home");
 
     </div>
     
-</body>
-</html>
+<?php
+// Output the HTML footer
+HTMLfoot();
+?>
