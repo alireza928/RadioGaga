@@ -96,6 +96,9 @@ function HTMLNav()
 function HTMLfoot()
 {
 ?>
+    <footer>
+        <p>&copy; 2025 RadioGaga.</p>
+    </footer>
     </body>
     </html>
 <?php
