@@ -27,10 +27,6 @@ function myDump($varName, $varValue, $die = false)
     border:1px solid #ccc;
     color:#000;
     overflow-x:auto;">' . "\n";
-
-
-
-    
    
     // --- Display Caller Info ---
     echo '<strong style="color:#ff0000;">Debug Dump called from<br />File: ' . htmlspecialchars($caller['file']) . '<br />Line ' . $caller['line'] . ':</strong><br /><pre>';
