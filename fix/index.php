@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <title>Home - RadioGaga</title>
-</head>
-<body>
+<?php
+// include functions file
+require_once 'inc/functions.php';
+
+// Output the HTML header for the home page
+HTMLhead("RadioGaga Home");
+?>
 
     <div class="header">
 
@@ -14,7 +12,7 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="playlist.php">Playlist</a></li>
+                <li><a href="playlist.php">Albums</a></li>
             </ul>
         </nav>
 
@@ -24,7 +22,7 @@
 
         <h1>Welcome to RadioGaga</h1>
         <p>Enjoy the greatest hip hop hits with music, audio, and videos!</p>
-        <a href="playlist.php" class="btn">Go to Playlist</a>
+        <a href="playlist.php" class="btn">Go to Albums</a>
 
         <h2>Featured Albums</h2>
         

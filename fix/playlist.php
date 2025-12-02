@@ -1,6 +1,6 @@
 <?php
 // get the functions
-require '../inc/functions.php';
+require_once 'inc/functions.php';
 
 // Database connection
 $conn = mysqli_connect("localhost", "root", "", "radio");
@@ -25,25 +25,18 @@ $tracks = mysqli_fetch_all($tracks_result, MYSQLI_ASSOC);
 
 // myDump("tracks", $tracks);
 
+// head the HTML
+HTMLhead("Playlist - " . $album['name']);
+
+
+
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">'
-    <link rel="stylesheet" href="CSS/styles.css">
-    <title>Playlist - <?php echo $album['name']; ?><</title>
-</head>
-<body>
-    
     <div class="header">
     <a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="playlist.php">Playlist</a></li>
+            <li><a href="playlist.php">Albums</a></li>
         </ul>
     </nav>
     </div>

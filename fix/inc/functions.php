@@ -55,4 +55,27 @@ function myDump($varName, $varValue, $die = false)
     // If $die is false, just close the myDump container and continue
     echo '</div>';
 }
+
+/**
+ * Outputs the HTML header for general pages.
+ **/
+function HTMLhead($title = "RadioGaga")
+{
+?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <title><?php echo htmlspecialchars($title); ?></title>
+    </head>
+    <body>
+<?php
+}
+
+
+
+
+
 ?>
