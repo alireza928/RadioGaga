@@ -1,4 +1,8 @@
 <?php
+/* ===================================
+   RadioGaga - index or home page 
+   =================================== */
+
 // include functions file
 require_once 'inc/functions.php';
 

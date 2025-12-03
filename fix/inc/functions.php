@@ -1,4 +1,9 @@
 <?php
+/* ===================================
+   RadioGaga - functions
+   =================================== */
+
+
 /**
  * - Summary of myDump
  * - A custom function for debugging that dumps variable information.
@@ -80,7 +85,7 @@ function HTMLNav()
 ?>
         <div class="header">
 
-        <a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>
+        <!--<a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>!-->
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>

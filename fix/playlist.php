@@ -1,4 +1,10 @@
 <?php
+/* ===================================
+   RadioGaga - playlist 
+   =================================== */
+
+/// playlist.php - Playlist page for RadioGaga website
+
 // get the functions
 require_once 'inc/functions.php';
 
