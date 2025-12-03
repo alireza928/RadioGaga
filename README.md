@@ -140,18 +140,6 @@ This project demonstrates proficiency in:
 
 ---
 
-## 📸 Screenshots
-
-*(Add screenshots here)*
-
-### Homepage
-![Homepage Preview](#)
-
-### Playlist Page
-![Playlist Preview](#)
-
----
-
 ## 🔮 Future Improvements
 
 - [ ] User authentication system
@@ -163,11 +151,6 @@ This project demonstrates proficiency in:
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 👨‍💻 Author
 
