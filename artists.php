@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Artists</title>
-</head>
-<body>
+<?php
+/* ===================================
+   RadioGaga - Artists page 
+   Lists all artists in the database
+   =================================== */
+
+// Include functions file for shared HTML components
+require_once 'inc/functions.php';
+
+// Output the HTML header with page title
+HTMLhead("Artists - RadioGaga");
+
+// Output the navigation bar
+HTMLNav();
+?>
+
+    <!-- Main content section -->
+    <div class="content">
+        <!-- Page heading -->
+        <h1>Artists</h1>
+        
+        <!-- Artist listing will be implemented here -->
+        <p>Browse our collection of talented artists.</p>
+        
+        <!-- TODO: Add database integration to display artist list -->
+    </div>
     
-</body>
-</html>
+<?php
+// Output the HTML footer
+HTMLfoot();
+?>

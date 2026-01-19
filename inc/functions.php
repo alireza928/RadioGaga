@@ -70,9 +70,15 @@ function HTMLhead($title = "RadioGaga")
     <!DOCTYPE html>
     <html lang="en">
     <head>
+        <!-- Character encoding declaration -->
         <meta charset="UTF-8">
+        <!-- Viewport for responsive design -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Author meta tag -->
+        <meta name="Author" content="RadioGaga Alireza">
+        <!-- Main stylesheet -->
         <link rel="stylesheet" href="CSS/styles.css">
+        <!-- Page title -->
         <title><?php echo htmlspecialchars($title); ?></title>
     </head>
     <body>
@@ -83,28 +89,44 @@ function HTMLhead($title = "RadioGaga")
 function HTMLNav()
 {
 ?>
-        <div class="header">
-
-        <!--<a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>!-->
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="playlist.php">Albums</a></li>
-            </ul>
-        </nav>
-
-    </div>
+        <!-- Header section with logo and navigation -->
+        <header class="header">
+            <!-- Logo with link to homepage -->
+            <a href="index.php"><img src="IMG/Radio_Logo.png" alt="RadioGaga Logo" class="logo"></a>
+            
+            <!-- Main navigation menu -->
+            <nav>
+                <ul>
+                    <!-- Home page link -->
+                    <li><a href="index.php">Home</a></li>
+                    <!-- Albums/Playlist page link -->
+                    <li><a href="playlist.php">Albums</a></li>
+                    <!-- Artists page link -->
+                    <li><a href="artists.php">Artists</a></li>
+                    <!-- Popular Artists page link -->
+                    <li><a href="popular_artists.php">Popular Artists</a></li>
+                    <!-- Contact page link -->
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 <?php
 }
 
-// Outputs the HTML footer
+/**
+ * Outputs the HTML footer - closes the body and html tags
+ * This function should be called at the end of every page
+ */
 function HTMLfoot()
 {
 ?>
+    <!-- Footer section -->
     <footer>
         <p>&copy; 2025 RadioGaga.</p>
     </footer>
+    <!-- Close body tag -->
     </body>
+    <!-- Close html tag -->
     </html>
 <?php
 }

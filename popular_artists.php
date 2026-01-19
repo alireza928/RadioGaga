@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Popular Artists</title>
-</head>
-<body>
+<?php
+/* ===================================
+   RadioGaga - Popular Artists page 
+   Showcases the most popular artists
+   =================================== */
+
+// Include functions file for shared HTML components
+require_once 'inc/functions.php';
+
+// Output the HTML header with page title
+HTMLhead("Popular Artists - RadioGaga");
+
+// Output the navigation bar
+HTMLNav();
+?>
+
+    <!-- Main content section -->
+    <div class="content">
+        <!-- Page heading -->
+        <h1>Popular Artists</h1>
+        
+        <!-- Popular artists showcase will be implemented here -->
+        <p>Discover our most popular and trending artists.</p>
+        
+        <!-- TODO: Add database integration to display popular artists based on plays/ratings -->
+    </div>
     
-</body>
-</html>
+<?php
+// Output the HTML footer
+HTMLfoot();
+?>
