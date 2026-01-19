@@ -26,6 +26,28 @@ SET time_zone = "+00:00";
 --
 -- Tabelstructuur voor tabel `albums`
 --
+-- Create the navigation table
+-- This table stores all the menu items that appear in the navigation bar
+CREATE TABLE IF NOT EXISTS `navigation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,           -- Unique ID for each menu item
+  `title` varchar(50) NOT NULL,                   -- The text that shows in the menu (like "Home", "Albums")
+  `url` varchar(255) NOT NULL,                    -- The page it links to (like "index.php")
+  `position` int(11) NOT NULL DEFAULT 0,          -- The order of the menu items (lower numbers appear first)
+  `active` tinyint(1) NOT NULL DEFAULT 1,         -- 1 = show this menu item, 0 = hide it
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Insert the navigation menu items
+-- These are the 5 pages in your website
+INSERT INTO `navigation` (`id`, `title`, `url`, `position`, `active`) VALUES
+(1, 'Home', 'index.php', 1, 1),                   -- Home page - shows first
+(2, 'Albums', 'playlist.php', 2, 1),              -- Albums/Playlist page - shows second
+(3, 'Artists', 'artists.php', 3, 1),              -- Artists page - shows third
+(4, 'Popular Artists', 'popular_artists.php', 4, 1), -- Popular Artists - shows fourth
+(5, 'Contact', 'contact.php', 5, 1);              -- Contact page - shows last
+
+-- That's it! Now you have a navigation table with 5 menu items
+
 
 CREATE TABLE `albums` (
   `album_id` int(11) NOT NULL,

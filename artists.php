@@ -1,31 +1,50 @@
 <?php
-/* ===================================
-   RadioGaga - Artists page 
-   Lists all artists in the database
-   =================================== */
-
-// Include functions file for shared HTML components
+// Artists pagina - laat 3 artiesten zien uit database
 require_once 'inc/functions.php';
 
-// Output the HTML header with page title
-HTMLhead("Artists - RadioGaga");
+// Haal artiesten op
+$artists = getArtists();
 
-// Output the navigation bar
+HTMLhead("Artists - RadioGaga");
 HTMLNav();
 ?>
 
-    <!-- Main content section -->
     <div class="content">
-        <!-- Page heading -->
         <h1>Artists</h1>
+        <p>Onze featured hip-hop artiesten en hun top tracks.</p>
         
-        <!-- Artist listing will be implemented here -->
-        <p>Browse our collection of talented artists.</p>
+        <?php
+        // Loop door alle artiesten
+        foreach ($artists as $artist) {
+        ?>
         
-        <!-- TODO: Add database integration to display artist list -->
+        <div class="artist-section">
+            <h2><?php echo $artist['name']; ?></h2>
+            
+            <div class="artist-container">
+                <div class="artist-image">
+                    <img src="<?php echo $artist['image']; ?>" alt="<?php echo $artist['name']; ?>">
+                </div>
+                
+                <div class="artist-info">
+                    <p><?php echo $artist['bio']; ?></p>
+                    
+                    <h3>Top 3 Songs:</h3>
+                    <ul class="top-songs">
+                        <li><?php echo $artist['top_song_1']; ?></li>
+                        <li><?php echo $artist['top_song_2']; ?></li>
+                        <li><?php echo $artist['top_song_3']; ?></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <?php
+        }
+        ?>
+        
     </div>
     
 <?php
-// Output the HTML footer
 HTMLfoot();
 ?>

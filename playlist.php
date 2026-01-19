@@ -1,41 +1,27 @@
 <?php
-/* ===================================
-   RadioGaga - playlist 
-   =================================== */
-
-/// playlist.php - Playlist page for RadioGaga website
-
-// get the functions
+// Playlist pagina - laat tracks van een album zien
 require_once 'inc/functions.php';
 
-// Database connection
+// Database connectie
 $conn = mysqli_connect("localhost", "root", "", "radio");
 if (!$conn) { 
     die("Connection failed: " . mysqli_connect_error()); 
 }
 
-
-// Get album ID from URL
+// Haal album ID op uit URL
 $album_id = isset($_GET['album']) ? intval($_GET['album']) : 1;
 
-// Fetch album details
+// Haal album info op
 $album_sql = "SELECT * FROM albums WHERE album_id = $album_id";
 $album_result = mysqli_query($conn, $album_sql);
 $album = mysqli_fetch_assoc($album_result);
 
-// Fetch tracks from this album
+// Haal tracks op
 $tracks_sql = "SELECT * FROM tracks WHERE album_id = $album_id";
 $tracks_result = mysqli_query($conn, $tracks_sql);
-
 $tracks = mysqli_fetch_all($tracks_result, MYSQLI_ASSOC);
 
-// Debugging: dump the tracks array
-// myDump("tracks", $tracks);
-
-// head the HTML
 HTMLhead("Playlist - " . $album['name']);
-
-// Output the navigation bar
 HTMLNav();
 ?>
 
@@ -47,9 +33,9 @@ HTMLNav();
 
     <div class="content">
         <h1><?php echo $album['name']; ?></h1>
-        
         <h2>Tracks</h2>
     </div>
+    
     <div class="track">
     <table>
         <thead>
@@ -62,18 +48,18 @@ HTMLNav();
         <tbody>
             <?php foreach($tracks as $track) { ?>
             <tr>
-                <td class="track-name"><?php echo htmlspecialchars($track['name']); ?></br /><?php // myDump("\$track", $track); ?></td>
-                <td class="track-duration"><?php echo htmlspecialchars($track['duration']); ?></td>
+                <td class="track-name"><?php echo $track['name']; ?></td>
+                <td class="track-duration"><?php echo $track['duration']; ?></td>
                 <td>
                     <audio controls>
-                        <source src="<?php echo htmlspecialchars($track['audio_file']); ?>" type="audio/mpeg">
+                        <source src="<?php echo $track['audio_file']; ?>" type="audio/mpeg">
                     </audio>
                 </td>
             </tr>
             <tr>
                 <td colspan="3">
                     <h2>Video:</h2>
-                    <iframe src="<?php echo $track ['video']; ?>" title="Dr. Dre - I Need A Doctor (Explicit) ft. Eminem, Skylar Grey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="<?php echo $track ['video']; ?>" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </td>
             <tr>
                 <td colspan="3">
@@ -87,7 +73,5 @@ HTMLNav();
     </div>    
 
 <?php
-// the HTML footer
 HTMLfoot();
 ?>
-                
